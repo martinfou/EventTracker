@@ -12,6 +12,6 @@ public class HelloControlller {
 		
 		model.addAttribute("greeting", "Hello World");
 		
-		return "hello.jsp";
+		return "hello";
 	}
 }
