@@ -1,13 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Event Page</title>
+<title>Attendee Page</title>
 <style type="text/css">
 .error {
 	color: #ff0000;
@@ -24,20 +23,25 @@
 
 </head>
 <body>
-<a href="?language=en">
-	English
-</a>
-<a href="?language=fr">
-	French
-</a>
+<body>
+	<a href="?language=en"> English </a>
+	<a href="?language=fr"> French </a>
 
-	<form:form commandName="event">
+	<form:form commandName="attendee">
 		<form:errors path="*" cssClass="errorblock" element="div"></form:errors>
-		<label for="textinput1"><spring:message code=""></spring:message></label>
+		<label for="textinput1"><spring:message code="attendee.name"/></label>
 		<form:input path="name" cssErrorClass="error" />
 		<form:errors path="name" cssClass="error" />
 		<br>
-		<input type="submit" class="btn" value="Enter Event" />
+
+		<label for="textinput2"><spring:message code="attendee.email.address"/></label>
+		<form:input path="address" cssErrorClass="error" />
+		<form:errors path="address" cssClass="error" />
+		<br>
+
+		<input type="submit" class="btn" value="Enter attendee" />
 	</form:form>
 </body>
+
+
 </html>
